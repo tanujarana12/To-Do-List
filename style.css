@@ -1,0 +1,78 @@
+*{
+    margin:0px;
+    padding:0px;
+    font-family:cursive; 
+}
+
+.header{
+    background: linear-gradient(135deg, rgb(119, 57, 67), rgb(96, 53, 61));
+    width: 100%;
+    max-width: 400px;
+    height:500px;
+    color:white;
+    margin:100px auto 10px;
+    border-radius: 5%;
+}
+
+.toDoHeading{
+  display:flex;  
+  /* align-items: center;
+  justify-content: center; */
+  margin-top:10px;
+  padding: 20px;
+}
+
+
+.searchBox{
+    margin:0px;
+}
+.img1{
+    width:50px;   
+}
+
+.img2{
+    width:50px; 
+      
+}
+
+.inputField{
+    margin:30px;
+    margin-top:13px;
+    padding:2px;
+    width:55%;
+    height:30px;
+    border-radius: 20px;
+}
+
+.addButton{
+    height: 37px;
+    width: 58px;
+    border-radius: 15px;
+    background-color: rgb(231 205 239);
+}
+
+
+.listOfItems{
+    color:white;
+    margin:30px;
+    padding:2px;
+    font-size:20px;
+    margin-top:-10px;
+   
+}
+.listOfItems1{
+    display: flex;
+    justify-content: space-between;
+}
+
+.button{
+    width:30px;
+    padding: 5px;
+    border-radius: 14px;
+    margin-right: 40px;
+}
+
+.listOfItems img{
+    width:15px;
+}
+
