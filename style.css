@@ -2,10 +2,14 @@
     margin:0px;
     padding:0px;
     font-family:cursive; 
+    
 }
+/* body{
+    background: linear-gradient(75deg, rgb(210, 190, 193), rgb(87, 67, 71));
+} */
 
-.header{
-    background: linear-gradient(135deg, rgb(119, 57, 67), rgb(96, 53, 61));
+#header{
+    background: linear-gradient(135deg, rgb(195 123 134), rgb(54 3 13));
     width: 100%;
     max-width: 400px;
     height:500px;
@@ -35,7 +39,7 @@
       
 }
 
-.inputField{
+#inputField{
     margin:30px;
     margin-top:13px;
     padding:2px;
@@ -44,7 +48,7 @@
     border-radius: 20px;
 }
 
-.addButton{
+#addButton{
     height: 37px;
     width: 58px;
     border-radius: 15px;
@@ -58,8 +62,18 @@
     padding:2px;
     font-size:20px;
     margin-top:-10px;
+    overflow-y: auto;
+    height: 284px;
+    /* height: 100px; */
    
 }
+
+/* .listOfItems::-webkit-scrollbar {
+    width: 8px; 
+}
+.listOfItems::-webkit-scrollbar-track{
+    background: pink;
+} */
 .listOfItems1{
     display: flex;
     justify-content: space-between;
@@ -75,4 +89,35 @@
 .listOfItems img{
     width:15px;
 }
+.checkbox{
+    margin-right: 10px;
+    accent-color: #E0F2F1;
+}
+.themes{
+    margin:30px;
+    font-size: 18px;
+}
+/* #theme1{
+    background: linear-gradient(135deg, rgb(195 123 134), rgb(54 3 13));
+}
+#theme2{
+    background: linear-gradient(135deg, rgb(23 21 65), rgb(21 29 96));
+}
 
+#theme3{
+    background: linear-gradient(135deg, rgb(185 231 202), rgb(8 44 10));
+}
+
+#theme4{
+    background: linear-gradient(135deg, rgb(208 148 191), rgb(80 36 66));
+}
+
+#theme5{
+    background: linear-gradient(135deg, #FFEB3B, #FF5722);
+}
+#theme6{
+    background: linear-gradient(135deg, rgb(57 119 73), rgb(96, 53, 61));
+}
+#theme7{
+    background: linear-gradient(135deg, rgb(9 2 121), rgb(64 113 21));
+} */

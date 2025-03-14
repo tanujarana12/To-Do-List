@@ -9,25 +9,60 @@
 </head>
 
 <body>
-    <div class="header">
+    <div id="header">
         <div class="toDoHeading">
             <img class="img1" src="to-do-list.png">
             <h1>TO-DO List </h1>
             <img class="img2" src="to-do-list.png">
         </div>
+        <div>
+            <label for="themes" class="themes">Choose Your Theme :</label>
+            <select id="themes">
+                <option value="theme1" >Default</option>
+                <option value="theme2" >Dark Mode</option>
+                <option value="theme3" >Green Forest</option>
+                <option value="theme4" >Barbie Pink</option>
+                <option value="theme5" >Sunset</option>
+                <option value="theme6" >Greenish Mix</option>
+                <option value="theme7" >Mix Match</option>
+            </select>
+            
+        </div>
         <div class="searchBox">
-            <input class="inputField" placeholder="Enter Text Here">
-            <button class="addButton">Add</button>
+            <input id="inputField" type="text" placeholder="Enter Text Here">
+            <button id="addButton">Add</button> 
         </div>
-        <div class="listOfItems">
-            <div class="listOfItems1"><p>Text1</p><button class="button"><img src="close.png"></div></button>
-            <div class="listOfItems1"><p>Text1</p><button class="button"><img src="close.png"></div></button>
-            <div class="listOfItems1"><p>Text1</p><button class="button"><img src="close.png"></div></button>
-            <div class="listOfItems1"><p>Text1</p><button class="button"><img src="close.png"></div></button>
+        <div class="listOfItems" id="listOfTasks">
+
+            <!-- <div class="listOfItems1" id="njn">
+                <span>
+                    <input type="checkbox" id="text1" class="checkbox">
+                    <label for="text1">Work</label>
+                </span>
+                <span>
+                    <button class="button"><img src="close.png"></button>
+                </span>
+            </div> -->
+
+
         </div>
+        <!-- <div class="themes">
+            <h3>Themes</h3>
+            <ul>
+                <li id="darkMode"><a>Dark Mode</a></li>
+                <li id="themeGreenForest">Green Forest</li>
+                <li id="BarbiePink">Barbie Pink</li>
+                <li id="sunset">Sunset</li>
+                <li id="greenishMix">Greenish Mix</li>
+                <li id="mixMatch">Mix Match</li>
+
+
+            </ul>
+        </div> -->
+
 
     </div>
-
+    <script src="index.js"></script>
 </body>
 
 </html>
