@@ -3,6 +3,17 @@ console.log(listOfItems);
 // listOfItems[0].innerText="Hello";
 // listOfItems[1].querySelector("label").innerText = "Hello";
 let inputSearchBox = document.getElementById('inputField');
+let selectTheme = document.getElementById("themes");
+let bodyTheme = document.getElementById("header")
+
+
+let localStoragetheme = localStorage.getItem("theme");
+
+if (localStoragetheme !== null) {
+    changeTheme(localStoragetheme)
+    selectTheme.value = localStoragetheme;
+}
+
 
 
 // let inputCheckbox = document.createElement("input");
@@ -46,7 +57,7 @@ function newItem(inputSearchBox) {
     else {
         const listOfTasksDiv = document.getElementById('listOfTasks');
         let checkBoxId = "text" + listOfTasksDiv.children.length;
-        let listOfItemsId ="Div" + listOfTasksDiv.children.length;
+        let listOfItemsId = "Div" + listOfTasksDiv.children.length;
 
         let inputCheckbox = document.createElement("input");
         inputCheckbox.type = "checkbox";
@@ -54,7 +65,7 @@ function newItem(inputSearchBox) {
         inputCheckbox.classList.add("checkbox");
         console.dir(inputCheckbox);
 
-        inputCheckbox.addEventListener("change", function(){
+        inputCheckbox.addEventListener("change", function () {
             console.dir(inputCheckbox);
         });
 
@@ -68,40 +79,41 @@ function newItem(inputSearchBox) {
         spanForList.appendChild(labelForInput);
         let listofItemDiv = document.createElement("div");
         listofItemDiv.classList.add("listOfItems1");
-        console.log(listofItemDiv,"DivClass");
-        listofItemDiv.id=listOfItemsId;
+        console.log(listofItemDiv, "DivClass");
+        listofItemDiv.id = listOfItemsId;
         listofItemDiv.appendChild(spanForList)
 
-        let buttonElement= document.createElement("button");
+        let buttonElement = document.createElement("button");
         buttonElement.classList.add("button");
-        let imageElement=document.createElement("img");
-        imageElement.setAttribute("src","close.png");
+        let imageElement = document.createElement("img");
+        imageElement.setAttribute("src", "close.png");
         let spanForCloseButton = document.createElement("span");
         buttonElement.appendChild(imageElement);
         spanForCloseButton.appendChild(buttonElement);
-        
+
         listofItemDiv.appendChild(spanForCloseButton)
         listOfTasksDiv.appendChild(listofItemDiv);
 
-        inputCheckbox.addEventListener("change", function(){
-            if(inputCheckbox.checked=== true){
-                labelForInput.style.textDecoration="line-through"
+        inputCheckbox.addEventListener("change", function () {
+            if (inputCheckbox.checked === true) {
+                labelForInput.style.textDecoration = "line-through #726464 solid 2px";
+                labelForInput.style.textDecorationColor="black";
             }
-            else{
-                labelForInput.style.textDecoration="none"
+            else {
+                labelForInput.style.textDecoration = "none"
             }
         })
-        console.dir(inputCheckbox,"afterInput");
+        console.dir(inputCheckbox, "afterInput");
 
-        buttonElement.addEventListener("click", ()=>{
+        buttonElement.addEventListener("click", () => {
             listofItemDiv.remove();
-           
+
 
         })
-        
-       
-}
-    
+
+
+    }
+
 }
 
 
@@ -121,7 +133,7 @@ function newItem(inputSearchBox) {
 
 newListAddButton.addEventListener("click", () => {
     newItem(inputSearchBox.value)
-    inputSearchBox.value= ""
+    inputSearchBox.value = ""
 })
 
 
@@ -129,10 +141,10 @@ newListAddButton.addEventListener("click", () => {
 //ADDING THEMES
 
 
-var selectTheme = document.getElementById("themes");
+
 // // var selectTheme = document.getElementById("themes");
 // console.log(selectTheme,"theme")
-var bodyTheme = document.getElementById("header")
+
 // console.log(bodyTheme,"header")
 
 // if (selectTheme.value==="darkMode"){
@@ -160,37 +172,80 @@ var bodyTheme = document.getElementById("header")
 // }
 
 selectTheme.addEventListener("change", function () {
-    if (selectTheme.value === "theme1") {
-        bodyTheme.style.background = "linear-gradient(135deg, rgb(195, 123, 134), rgb(54, 3, 13))";
-    }
-    else if (selectTheme.value === "theme2") {
-        bodyTheme.style.background = "linear-gradient(135deg, rgb(23, 21, 65), rgb(21, 29, 96))";
-    }
-    else if (selectTheme.value === "theme3") {
-        bodyTheme.style.background = "linear-gradient(135deg, rgb(185, 231 ,202), rgb(8, 44, 10))";
-    }
-    else if (selectTheme.value === "theme4") {
-        bodyTheme.style.background = "linear-gradient(135deg, rgb(208, 148, 191), rgb(80, 36, 66))";
-    }
-    else if (selectTheme.value === "theme5") {
-        bodyTheme.style.background = "linear-gradient(135deg, #FFEB3B, #FF5722)";
-    }
-    else if (selectTheme.value === "theme6") {
-        bodyTheme.style.background = "linear-gradient(135deg, rgb(57 ,119, 73), rgb(96, 53, 61))";
-    }
-    else if (selectTheme.value === "theme7") {
-        bodyTheme.style.background = "linear-gradient(135deg, rgb(9, 2, 121), rgb(64, 113, 21))";
-    }
+    let settheme = localStorage.setItem("theme", selectTheme.value);
+    console.log(settheme)
+    changeTheme(selectTheme.value)
 
 });
 // });
 
+function changeTheme(themeValue) {
+    if (themeValue === "theme1") {
+        bodyTheme.style.background = "linear-gradient(135deg, rgb(195, 123, 134), rgb(54, 3, 13))";
+    }
+    else if (themeValue === "theme2") {
+        bodyTheme.style.background = "linear-gradient(135deg, rgb(23, 21, 65), rgb(21, 29, 96))";
+    }
+    else if (themeValue === "theme3") {
+        bodyTheme.style.background = "linear-gradient(135deg, rgb(185, 231 ,202), rgb(8, 44, 10))";
+    }
+    else if (themeValue === "theme4") {
+        bodyTheme.style.background = "linear-gradient(135deg, rgb(208, 148, 191), rgb(80, 36, 66))";
+    }
+    else if (themeValue === "theme5") {
+        bodyTheme.style.background = "linear-gradient(135deg, #FFEB3B, #FF5722)";
+    }
+    else if (themeValue === "theme6") {
+        bodyTheme.style.background = "linear-gradient(135deg, rgb(57 ,119, 73), rgb(96, 53, 61))";
+    }
+    else if (themeValue === "theme7") {
+        bodyTheme.style.background = "linear-gradient(135deg, rgb(9, 2, 121), rgb(64, 113, 21))";
+    }
+}
+
+
 //Adding text-decoration= line through
-var taskComplete = document.getElementsByClassName('checkbox')
-console.log(taskComplete)
+// var taskComplete = document.getElementsByClassName('checkbox')
+// console.log(taskComplete)
 
 
 
 // Adding Input list
 
 
+
+
+
+//Backend call
+
+const backendBaseURL = "http://localhost:3000";
+
+
+// async function getAllToDo() {
+//     console.log("API internal")
+//     const getToDoURL= backendBaseURL + "/todo/getAll"
+//     const response = await fetch(getToDoURL);
+//     const data= await response.json();
+//     console.log(data);
+// }
+// getAllToDo()
+
+async function getWater(numberOfGlasses, waterType) {
+    console.log("API internal")
+    // const getWater= backendBaseURL + "/todo/getWater?numberOfGlasses=" + numberOfGlasses + "&waterType=" + waterType;
+    const getWater= `${backendBaseURL}/todo/getWater?numberOfGlasses=${numberOfGlasses}&waterType=${waterType}`;
+    const response = await fetch(getWater);
+    const data= await response.json();
+    console.log(data);
+}
+
+async function getStudents() {
+    console.log("API internal")
+    // const getWater= backendBaseURL + "/todo/getWater?numberOfGlasses=" + numberOfGlasses + "&waterType=" + waterType;
+    const getWater= `${backendBaseURL}/student/getAllWithAddress`;
+    const response = await fetch(getWater);
+    const data= await response.json();
+    console.log(data);
+}
+
+getStudents();
